@@ -1,14 +1,16 @@
 package ui;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import doll.Acount;
 
 
 public class Menu {
-	public int pos=0;
-	Acount [] losp=new Acount[1000];
+	ArrayList<Acount> losp=new ArrayList<Acount>();
 	MenuCrearCuenta lss =new MenuCrearCuenta();
+	//Variable que almacena la opcion digitada por el usuario
 	String opc;
+	//Variable que almacena el valor numero de la opcion digitada por el usuario
 	int numericOpc=0;
 	Scanner scan= new Scanner(System.in);
 	public void mop() {
@@ -23,8 +25,8 @@ public class Menu {
 		opc=scan.nextLine();
 		
 		try {
-			String kk=opc;
-			numericOpc=Integer.parseInt(kk);
+			
+			numericOpc=Integer.parseInt(opc);
 		}
 		catch(Exception ex) {
 			System.out.println("Opcion invalida porfavor digite una opcion valida:\n");
@@ -33,12 +35,11 @@ public class Menu {
 		switch (numericOpc) {
 		case 1:
 			System.out.println("Agregar acciones para ingresar\n");
-			lss.verUsuarios(this.pos, this.losp);
+			lss.verUsuarios(this.losp);
 			take_actions();
 			break;
 		case 2:
-			this.pos++;
-			lss.crear(pos, losp);
+			lss.crear(losp);
 			take_actions();
 			break;
 		case 3:

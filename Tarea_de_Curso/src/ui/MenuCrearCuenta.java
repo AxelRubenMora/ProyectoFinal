@@ -1,14 +1,17 @@
 package ui;
 
 import doll.Acount;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 public class MenuCrearCuenta {
 	
 	Scanner scan= new Scanner(System.in);
 	
-	public void crear(int pos, Acount[] losp) {
-		
+	public void crear(ArrayList<Acount>losp) {
+		//crea un objeto de tipo acount
 		Acount na= new Acount();
+		//introducimos los datos de la cuenta
 		System.out.println("Porfavor Digite Su primer nombre: ");
 		na.setFirstName(scan.nextLine());
 		System.out.println("Porfavor Digite Su Segundo nombre: ");
@@ -17,15 +20,17 @@ public class MenuCrearCuenta {
 		na.setFirstSourName(scan.nextLine());
 		System.out.println("Porfavor Digite Su Segundo apellido: ");
 		na.setSecondSurName(scan.nextLine());
+		//Creamos el titular 
 		na.setTitular();
+		//Creamos el Numero de cuenta
 		na.setNumberAcount();
-		System.out.println(na.getNumberAcount());
-		System.out.println(na.getTitular());
-		losp[pos]=na;
+		losp.add(na);
 	}
-	public void verUsuarios(int tam,Acount []losp) {
-		for(int i=0;i>tam;i++) {
-			System.out.print(losp[i].getNumberAcount()+""+losp[i].getTitular());
+	public void verUsuarios(ArrayList<Acount>losp) {
+		//bucle for que recorre los elementos del arreglo
+		for(Acount i : losp) {
+			//imprime el numero de cuenta + el titular de la cuenta
+			System.out.println("N° Cuenta: "+i.getNumberAcount()+"\nTitular: "+i.getTitular());
 		}
 	}
 

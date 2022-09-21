@@ -8,9 +8,12 @@ public class Acount {
 	private String SecondSurName;
 	private String titular;
 	private double saldo;
+	
+	//constructor
 	public Acount() {
 		super();
 	}
+	
 	public String getTitular() {
 		return titular;
 	}
