@@ -1,0 +1,35 @@
+package doll;
+
+public class Acount extends Person {
+	private String numberAcount;
+	private String titular;
+	private double saldo;
+	
+	//constructor
+	public Acount() {
+		
+	}
+	public Acount(String firstName, String midleName, String firstSourName, String secondSurName) {
+		super(firstName,midleName,firstSourName,secondSurName);
+		int number= (int) Math.floor(Math.random()*100000000);
+		this.numberAcount=String.valueOf(number);
+	}
+	
+	public void setTitular(String titular) {
+		this.titular =firstName+" "+midleName+" "+firstSourName+" "+secondSurName;;
+	}
+	public String getTitular() {
+		return titular;
+	}
+	public double getSaldo() {
+		return saldo;
+	}
+	public void setSaldo(double saldo) {
+		this.saldo = saldo;
+	}
+	
+	public String getNumberAcount() {
+		return numberAcount;
+	}
+
+}

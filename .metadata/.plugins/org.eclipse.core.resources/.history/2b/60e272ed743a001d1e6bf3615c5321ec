@@ -1,0 +1,33 @@
+package doll;
+
+public class Acount {
+	private String numberAcount;
+	private String titular;
+	private double saldo;
+	
+	//constructor
+	public Acount(String titular) {
+		this.titular=titular;
+		super();
+	}
+	
+	public String getTitular() {
+		return titular;
+	}
+	public double getSaldo() {
+		return saldo;
+	}
+	public void setSaldo(double saldo) {
+		this.saldo = saldo;
+	}
+	
+	public String getNumberAcount() {
+		return numberAcount;
+	}
+	public void setNumberAcount() {
+		//Inplementar metodos para generar numeros aleatorios e implenentar comparar para que no se repitan
+		int number= (int) Math.floor(Math.random()*100000000);
+		numberAcount=String.valueOf(number);
+	}
+	
+}

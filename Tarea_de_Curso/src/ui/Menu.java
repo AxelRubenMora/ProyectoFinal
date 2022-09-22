@@ -7,7 +7,7 @@ import doll.Acount;
 
 public class Menu {
 	ArrayList<Acount> losp=new ArrayList<Acount>();
-	MenuCrearCuenta lss =new MenuCrearCuenta();
+	AcountForm lss =new AcountForm();
 	//Variable que almacena la opcion digitada por el usuario
 	String opc;
 	//Variable que almacena el valor numero de la opcion digitada por el usuario
