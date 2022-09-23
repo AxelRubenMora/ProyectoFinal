@@ -46,10 +46,13 @@ public class Menu {
 			take_actions();
 			break;
 		case 3:
+			System.out.println("Funciones de eliminar");
 			break;
 		case 4:
+			System.out.println("Editar cuentas");
 			break;
 		case 5:
+			System.out.println("Ingresar");
 			break;
 		case 6:
 			System.exit(0);
