@@ -5,7 +5,6 @@ public class Person {
 	protected String midleName;
 	protected String firstSourName;
 	protected String SecondSurName;
-	
 	public Person() {
 		
 	}

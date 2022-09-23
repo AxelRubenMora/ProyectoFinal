@@ -45,13 +45,7 @@ public class Menu {
 			lss.crear(losp);
 			take_actions();
 			break;
-		case 3:
-			break;
-		case 4:
-			break;
 		case 5:
-			break;
-		case 6:
 			System.exit(0);
 		default:
 			System.out.println("Opcion invalida\nPorfavor ingrese una opcion valida\n");
