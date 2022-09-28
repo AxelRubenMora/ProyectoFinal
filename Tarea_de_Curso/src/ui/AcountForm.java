@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class AcountForm {
 	
 	Scanner scan= new Scanner(System.in);
-	
+	Acount na;
 	public void crear(ArrayList<Acount>losp) {
 		//crea un objeto de tipo acount
 		Acount na= new Acount();
@@ -23,13 +23,60 @@ public class AcountForm {
 		na.setTitular();
 		na.setNumberAcount();
 		losp.add(na);
+		System.out.println("\n");
 	}
 	public void verUsuarios(ArrayList<Acount>losp) {
 		//bucle for que recorre los elementos del arreglo
 		for(Acount i : losp) {
 			//imprime el numero de cuenta + el titular de la cuenta
-			System.out.println("N° Cuenta: "+i.getNumberAcount()+"\nTitular: "+i.getTitular());
+			System.out.println("N° Cuenta: "+i.getNumberAcount()+"  "+"Titular: "+i.getTitular());
+			System.out.println("\n");
 		}
+	}
+	
+public void eliminar(ArrayList<Acount>losp) {
+	int num=0;
+	for(Acount i : losp) {
+		System.out.println(num+"). "+i.getNumberAcount()+" "+i.getTitular());
+		num++;
+		}
+	System.out.println("\nDigite el numero de cuenta de la cuenta que desea eliminar:\n");
+	int numelim=scan.nextInt();
+	try {
+		losp.remove(numelim);
+	}
+	catch(Exception e) {
+		System.out.println("numero fuera de rango\n");
+	}
+		
+	}
+
+public void editar(ArrayList<Acount>losp) {
+	int num=0;
+	for(Acount i : losp) {
+		System.out.println(num+"). "+i.getNumberAcount()+" "+i.getTitular());
+		num++;
+		}
+	System.out.println("\nDigite la cuenta que desea:\n");
+	int numelim=scan.nextInt();
+	Acount pru=new Acount();
+	scan.nextLine();
+	try {
+		pru= losp.get(numelim);
+	}
+	catch(Exception e) {
+		System.out.println("numero fuera de rango\n");
+	}
+	System.out.println("Porfavor Digite Su primer nombre: ");
+	pru.setFirstName(scan.nextLine());
+	System.out.println("Porfavor Digite Su Segundo nombre: ");
+	pru.setMidleName(scan.nextLine());
+	System.out.println("Porfavor Digite Su primer apellido: ");
+	pru.setFirstSourName(scan.nextLine());
+	System.out.println("Porfavor Digite Su Segundo apellido: ");
+	pru.setSecondSurName(scan.nextLine());
+	pru.setTitular();
 	}
 
 }
+

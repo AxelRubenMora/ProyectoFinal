@@ -1,16 +1,19 @@
 package doll;
 
-public class Acount extends Person {
+import java.io.Serializable;
+
+public class Acount extends Person implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1599521801223493122L;
 	private String numberAcount;
 	private String titular;
 	private double saldo;
 	public Acount() {
 		super();
 	}
-	public Acount(String firstName, String midleName, String firstSourName, String secondSurName) {
-		super(firstName,midleName,firstSourName,secondSurName);
-		
-	}
+	
 	public void setTitular() {
 		this.titular=this.firstName+" "+this.midleName+" "+this.firstSourName+" "+this.SecondSurName;
 	}
