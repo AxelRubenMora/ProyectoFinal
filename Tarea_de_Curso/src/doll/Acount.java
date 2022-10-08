@@ -13,7 +13,10 @@ public class Acount extends Person implements Serializable{
 	public Acount() {
 		super();
 	}
-	
+	public Acount(String firstName, String midleName, String firstSourName, String secondSurName) {
+		super(firstName,midleName,firstSourName,secondSurName);
+		
+	}
 	public void setTitular() {
 		this.titular=this.firstName+" "+this.midleName+" "+this.firstSourName+" "+this.SecondSurName;
 	}
@@ -33,7 +36,7 @@ public class Acount extends Person implements Serializable{
 	public void setNumberAcount() {
 		//Inplementar metodos para generar numeros aleatorios e implenentar comparar para que no se repitan
 		int number= (int) Math.floor(Math.random()*100000000);
-		numberAcount=String.valueOf(number);
+		this.numberAcount=String.valueOf(number);
 	}
 	
 }

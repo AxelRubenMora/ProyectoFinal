@@ -1,0 +1,18 @@
+package bll;
+
+import java.util.Scanner;
+
+public class Validaciones {
+	private Scanner scan;
+	
+	public int validarInt(String opc) {
+		int numericOpc=0;
+		return numericOpc;
+	}
+	public void validarDou(String opc) {
+		double numericOpc;
+		
+		return numericOpc;
+	}
+
+}

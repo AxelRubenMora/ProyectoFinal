@@ -1,0 +1,36 @@
+package bll;
+
+import java.util.Scanner;
+
+public class Validaciones {
+	private Scanner scan;
+	
+	public Validaciones(Scanner scan) {
+		super();
+		this.scan = scan;
+	}
+	public int validarInt(String opc) {
+		int numericOpc=0;
+		
+		try {
+			numericOpc=Integer.parseInt(opc);
+		}
+		catch(Exception ex) {
+			System.out.println("Opcion invalida porfavor digite una opcion valida:\n");
+		}
+		
+		return numericOpc;
+	}
+	public double validarDou(String opc) {
+		double numericOpc = 0;
+		try {
+			numericOpc=Double.parseDouble(opc);
+		}
+		catch(Exception ex) {
+			System.out.println("Opcion invalida porfavor digite una opcion valida:\n");
+			validarDou(scan.next());
+		}
+		return numericOpc;
+	}
+
+}

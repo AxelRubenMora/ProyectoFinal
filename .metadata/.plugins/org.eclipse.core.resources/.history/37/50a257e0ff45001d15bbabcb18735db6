@@ -1,0 +1,66 @@
+package ui;
+
+import doll.Acount;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import bll.Validaciones;
+public class AcountForm {
+	
+	private Scanner scan;
+	private Acount cuenta;
+	private List<Acount>ListCuentas;
+	private Validaciones val;
+	public AcountForm(Scanner scan) {
+		super();
+		this.scan=scan;
+		val=new Validaciones();
+	}
+	public AcountForm(Acount cuenta) {
+		super();
+		this.cuenta=cuenta;
+	}
+	
+	public AcountForm(List<Acount>ListCuentas) {
+		super();
+		this.ListCuentas=ListCuentas;
+	}
+	
+	public Acount crearCuenta() {
+		//crea un objeto de tipo acount
+		Acount cuenta= new Acount();
+		//introducimos los datos de la cuenta
+		System.out.println("Porfavor Digite Su primer nombre: ");
+		cuenta.setFirstName(scan.nextLine());
+		System.out.println("Porfavor Digite Su Segundo nombre: ");
+		cuenta.setMidleName(scan.nextLine());
+		System.out.println("Porfavor Digite Su primer apellido: ");
+		cuenta.setFirstSourName(scan.nextLine());
+		System.out.println("Porfavor Digite Su Segundo apellido: ");
+		cuenta.setSecondSurName(scan.nextLine());
+		cuenta.setTitular();
+		cuenta.setNumberAcount();
+		return cuenta;
+	}
+	
+	public void vercuenta() {
+		System.out.printf("Titular: %s",this.cuenta.getTitular());
+		System.out.printf("No. ceunta: %s",this.cuenta.getNumberAcount());
+	}
+	
+	public void verUsuarios(List<Acount>ListCuentas) {
+		//bucle for que recorre los elementos del arreglo
+		for(int i=0;i<ListCuentas.size();i++) {
+			//imprime el numero de cuenta + el titular de la cuenta
+			System.out.printf("%d | %s | s% | s%\n",i+1,ListCuentas.get(i).getTitular(),ListCuentas.get(i).getNumberAcount(),ListCuentas.get(i).getSaldo());
+			System.out.println("\n");
+		}
+	}
+	
+
+
+
+
+}
+
