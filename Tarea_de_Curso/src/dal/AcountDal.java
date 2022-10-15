@@ -47,7 +47,7 @@ public class AcountDal {
 	
 	
 	public void saveList() {
-		File file =new File(filePath+"\\"+fileName);
+		File file =new File("./"+fileName);
 		try {
 			ObjectOutputStream os= new ObjectOutputStream(new FileOutputStream(file));
 			os.writeObject(ListCuentas);
@@ -55,7 +55,7 @@ public class AcountDal {
 			os.close();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Archivo no encontrado");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -65,14 +65,14 @@ public class AcountDal {
 public List<Acount> openList() {
 		
 		try {
-			File file = new File(filePath);
+			File file = new File("./"+fileName);
 			ObjectInputStream ois= new ObjectInputStream( new FileInputStream(file));
 			List<Acount> ListCuentas = (List<Acount>)ois.readObject();
 			ois.close();
 			return ListCuentas;
 			
 		} catch (FileNotFoundException e) {
-			System.out.println("Lamentamos informar que dicha cuenta no existe");
+			System.out.println("Lamentamos informar que dicha Base De datos no existe");
 			
 		} catch (IOException e) {
 			System.out.println("error");

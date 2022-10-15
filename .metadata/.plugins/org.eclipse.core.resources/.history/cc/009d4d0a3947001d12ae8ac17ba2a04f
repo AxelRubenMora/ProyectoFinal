@@ -1,0 +1,41 @@
+package bll;
+
+import java.util.Scanner;
+
+public class Validaciones {
+	private Scanner scan;
+	private String opc;
+	
+	public Validaciones() {
+		super();
+	}
+	public int validarInt() {
+		scan=new Scanner(System.in);
+		
+		opc=scan.next();
+		int numericOpc=0;
+		
+		try {
+			numericOpc=Integer.parseInt(opc);
+		}
+		catch(Exception ex) {
+			System.out.println("opcion Invalida porfavor digite un carcter alfanumerico");
+			validarInt();	
+		}
+		
+		return numericOpc;
+	}
+	public double validarDou(String opc) {
+		scan=new Scanner(System.in);
+		
+		opc=scan.next();
+		double numericOpc = 0;
+		try {
+			numericOpc=Double.parseDouble(opc);
+		}
+		catch(Exception ex) {
+		}
+		return numericOpc;
+	}
+
+}

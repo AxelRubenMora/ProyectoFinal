@@ -4,12 +4,15 @@ import java.util.Scanner;
 
 public class Validaciones {
 	private Scanner scan;
+	private String opc;
 	
-	public Validaciones(Scanner scan) {
+	public Validaciones() {
 		super();
-		this.scan = scan;
 	}
-	public int validarInt(String opc) {
+	public int validarInt() {
+		scan=new Scanner(System.in);
+		
+		opc=scan.nextLine();
 		int numericOpc=0;
 		
 		try {
@@ -17,17 +20,22 @@ public class Validaciones {
 		}
 		catch(Exception ex) {
 			System.out.println("opcion Invalida porfavor digite un carcter alfanumerico");
-			validarInt(this.scan.next());	
+			numericOpc=validarInt();	
 		}
 		
 		return numericOpc;
 	}
-	public double validarDou(String opc) {
+	public double validarDou() {
+		scan=new Scanner(System.in);
+		
+		opc=scan.next();
 		double numericOpc = 0;
 		try {
 			numericOpc=Double.parseDouble(opc);
 		}
 		catch(Exception ex) {
+			System.out.println("opcion Invalida porfavor digite un carcter alfanumerico");
+			numericOpc=validarDou();
 		}
 		return numericOpc;
 	}
