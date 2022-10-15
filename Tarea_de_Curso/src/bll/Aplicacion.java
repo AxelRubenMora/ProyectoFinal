@@ -207,20 +207,38 @@ public class Aplicacion {
 				numelim=val.validarInt();
 				for (int i=0; i<listCuentas.size();i++) {
 					if(listCuentas.get(i).getNumberAcount()==numelim) {
-						try {
-							System.out.println("Digite el primer nombre");
-							listCuentas.get(i).setFirstName(scan.next());
-							System.out.println("Digite su segundo nombre");
-							listCuentas.get(i).setMidleName(scan.next());
-							System.out.println("Digite el primer apellido");
-							listCuentas.get(i).setFirstSourName(scan.next());
-							System.out.println("Digite su segundo apellido");
-							listCuentas.get(i).setSecondSurName(scan.next());
-							listCuentas.get(i).setTitular();
-							
-						}
-						catch(Exception e) {
-							
+						System.out.println("Digite que desea realizar");
+						System.out.println("1....editar titular");
+						System.out.println("2.....Hacer Deposito");
+						System.out.println("3......Hacer retiro");
+						int op=val.validarInt();
+						
+						switch(op) {
+						case 1:
+							try {
+								System.out.println("Digite el primer nombre");
+								listCuentas.get(i).setFirstName(scan.next());
+								System.out.println("Digite su segundo nombre");
+								listCuentas.get(i).setMidleName(scan.next());
+								System.out.println("Digite el primer apellido");
+								listCuentas.get(i).setFirstSourName(scan.next());
+								System.out.println("Digite su segundo apellido");
+								listCuentas.get(i).setSecondSurName(scan.next());
+								listCuentas.get(i).setTitular();
+								
+							}
+							catch(Exception e) {
+								
+							}
+							break;
+						case 2:
+							System.out.println("Digite la cantidad a depositar");
+							double cant=val.validarDou();
+							break;
+						case 3:
+							break;
+						default:
+							break;
 						}
 					}
 					else {

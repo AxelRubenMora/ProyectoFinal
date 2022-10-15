@@ -47,7 +47,7 @@ public class AcountDal {
 	
 	
 	public void saveList() {
-		File file =new File("./"+fileName);
+		File file =new File(filePath+fileName);
 		try {
 			ObjectOutputStream os= new ObjectOutputStream(new FileOutputStream(file));
 			os.writeObject(ListCuentas);
@@ -65,7 +65,7 @@ public class AcountDal {
 public List<Acount> openList() {
 		
 		try {
-			File file = new File("./"+fileName);
+			File file = new File(filePath+"//"+fileName);
 			ObjectInputStream ois= new ObjectInputStream( new FileInputStream(file));
 			List<Acount> ListCuentas = (List<Acount>)ois.readObject();
 			ois.close();

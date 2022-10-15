@@ -1,14 +1,14 @@
 package ui;
 
 import doll.Acount;
-
+import bll.Validaciones;
 import java.util.List;
 import java.util.Scanner;
 public class AcountForm {
 	private List<Acount>listaDeCuentas;
 	private Scanner scan;
 	private Acount cuenta;
-	
+	private Validaciones val=new Validaciones();
 	public AcountForm(List<Acount> listaDeCuentas) {
 		super();
 		this.listaDeCuentas = listaDeCuentas;
@@ -59,6 +59,12 @@ public class AcountForm {
 		}
 	}
 	 
+	
+	public void modificarSueldo() {
+		System.out.println("Digite la cantidad que desea ingresar");
+		double s=val.validarDou() ;
+		
+	}
 	
 }
 
