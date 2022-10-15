@@ -205,21 +205,29 @@ public class Aplicacion {
 				lss.verUsuarios();
 				System.out.println("\nDigite la cuenta que desea:\n");
 				numelim=val.validarInt();
+				for (int i=0; i<listCuentas.size();i++) {
+					if(listCuentas.get(i).getNumberAcount()==numelim) {
+						try {
+							System.out.println("Digite el primer nombre");
+							listCuentas.get(i).setFirstName(scan.next());
+							System.out.println("Digite su segundo nombre");
+							listCuentas.get(i).setMidleName(scan.next());
+							System.out.println("Digite el primer apellido");
+							listCuentas.get(i).setFirstSourName(scan.next());
+							System.out.println("Digite su segundo apellido");
+							listCuentas.get(i).setSecondSurName(scan.next());
+							listCuentas.get(i).setTitular();
+							
+						}
+						catch(Exception e) {
+							
+						}
+					}
+					else {
+						System.out.println("numero fuera de rango\n");
+					}
+				}
 				
-				try {
-					System.out.println("Porfavor Digite Su primer nombre: ");
-					listCuentas.get(numelim).setFirstName(scan.nextLine());
-					System.out.println("Porfavor Digite Su Segundo nombre: ");
-					listCuentas.get(numelim).setMidleName(scan.nextLine());
-					System.out.println("Porfavor Digite Su primer apellido: ");
-					listCuentas.get(numelim).setFirstSourName(scan.nextLine());
-					System.out.println("Porfavor Digite Su Segundo apellido: ");
-					listCuentas.get(numelim).setSecondSurName(scan.nextLine());
-					listCuentas.get(numelim).setTitular();
-				}
-				catch(Exception e) {
-					System.out.println("numero fuera de rango\n");
-				}
 			}
 		}
 		}

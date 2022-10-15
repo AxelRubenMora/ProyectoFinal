@@ -47,7 +47,7 @@ public class AcountForm {
 	public void verUsuarios() {
 		//bucle for que recorre los elementos del arreglo
 		try {
-			System.out.println("i|\ttitular\t|#Cuenta");
+			System.out.println("i|\ttitular\t\t|#Cuenta");
 			for(int i=0;i<listaDeCuentas.size();i++) {
 				//imprime el numero de cuenta + el titular de la cuenta
 				System.out.printf("%d |%s |%d\n",i+1,listaDeCuentas.get(i).getTitular(),listaDeCuentas.get(i).getNumberAcount());
