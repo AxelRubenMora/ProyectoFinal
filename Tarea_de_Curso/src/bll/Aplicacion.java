@@ -32,6 +32,7 @@ public class Aplicacion {
 		System.out.println(decora);
 	}
 	public void mostrarOpciones2() {
+		System.out.println();
 		System.out.println("1. Agregar nueva cuenta");
 		System.out.println("2. Eliminar Cuenta");
 		System.out.println("3. Editar Titular");
@@ -167,7 +168,7 @@ public class Aplicacion {
 				AcountForm lss= new AcountForm(listCuentas);
 				lss.verUsuarios();
 				System.out.println("\nDigite el numero de cuenta de la cuenta que desea eliminar:\n");
-				String numelim=scan.nextLine();
+				int numelim=val.validarInt();
 				try {
 					
 					//listCuentas.remove(numelim-1);

@@ -7,7 +7,7 @@ public class Acount extends Person implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = -1599521801223493122L;
-	private String numberAcount;
+	private int numberAcount;
 	private String titular;
 	private double saldo;
 	public Acount() {
@@ -30,13 +30,12 @@ public class Acount extends Person implements Serializable{
 		this.saldo = saldo;
 	}
 	
-	public String getNumberAcount() {
+	public int getNumberAcount() {
 		return numberAcount;
 	}
 	public void setNumberAcount() {
-		//Inplementar metodos para generar numeros aleatorios e implenentar comparar para que no se repitan
 		int number= (int) Math.floor(Math.random()*100000000);
-		this.numberAcount=String.valueOf(number);
+		this.numberAcount=number;
 	}
 	
 }

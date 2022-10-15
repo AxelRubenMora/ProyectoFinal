@@ -41,15 +41,16 @@ public class AcountForm {
 	
 	public void vercuenta() {
 		System.out.printf("Titular: %s",this.cuenta.getTitular());
-		System.out.printf("No. ceunta: %s",this.cuenta.getNumberAcount());
+		System.out.printf("No. ceunta: %d",this.cuenta.getNumberAcount());
 	}
 	
 	public void verUsuarios() {
 		//bucle for que recorre los elementos del arreglo
 		try {
+			System.out.println("i|\ttitular\t|#Cuenta");
 			for(int i=0;i<listaDeCuentas.size();i++) {
 				//imprime el numero de cuenta + el titular de la cuenta
-				System.out.printf("%d |%s |%s\n",i+1,listaDeCuentas.get(i).getTitular(),listaDeCuentas.get(i).getNumberAcount());
+				System.out.printf("%d |%s |%d\n",i+1,listaDeCuentas.get(i).getTitular(),listaDeCuentas.get(i).getNumberAcount());
 				System.out.println("\n");
 			}
 		}
